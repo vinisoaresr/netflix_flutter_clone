@@ -1,4 +1,5 @@
 import 'package:app/src/home_page/home.dart';
+import 'package:app/src/splash_page/splash_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +13,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Netflix Demo in Flutter',
       theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: HomePageWidget(),
+          primarySwatch: Colors.red,
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+              backgroundColor: Colors.black)),
+      home: const SplashPage(),
+      routes: {
+        '/splash_screen': (context) => const SplashPage(),
+        // '/home_page': (context) => HomePageWidget()
+      },
     );
   }
 }

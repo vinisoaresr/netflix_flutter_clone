@@ -50,7 +50,8 @@ class _CategorieWidgetState extends State<CategorieWidget> {
                       );
                     },
                     itemCount: widget.itemWidget.length,
-                  )),
+                  ),
+                ),
         ],
       ),
     );
